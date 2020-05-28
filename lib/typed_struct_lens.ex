@@ -3,17 +3,19 @@ defmodule TypedStructLens do
   Documentation for TypedStructLens.
   """
 
-  @doc """
-  Hello world.
+  use TypedStruct.Plugin
 
-  ## Examples
+  @impl true
+  @spec field(atom(), any(), keyword()) :: Macro.t()
+  def field(name, _type, opts) do
+    quote do
+      import Lens.Macros
 
-      iex> TypedStructLens.hello()
-      :world
-
-  """
-  @spec hello :: :world
-  def hello do
-    :world
+      if unquote(opts[:lens] == :private) do
+        deflensp unquote({name, [], []}), do: Lens.key(unquote(name))
+      else
+        deflens unquote({name, [], []}), do: Lens.key(unquote(name))
+      end
+    end
   end
 end

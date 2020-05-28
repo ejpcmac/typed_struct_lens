@@ -27,7 +27,7 @@ defmodule TypedStructLens.MixProject do
 
       # Package
       package: package(),
-      description: "Description for TypedStructLens."
+      description: "A TypedStruct plugin for defining a Lens on each field."
     ]
   end
 
@@ -52,6 +52,9 @@ defmodule TypedStructLens.MixProject do
       {:stream_data, "~> 0.4.0", only: :test},
 
       # Project dependencies
+      {:typed_struct,
+       github: "ejpcmac/typed_struct", branch: :develop, runtime: false},
+      {:lens, "~> 0.9.0"},
 
       # Documentation dependencies
       {:ex_doc, "~> 0.19", only: :docs, runtime: false}
