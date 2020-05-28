@@ -34,6 +34,26 @@ defmodule TypedStructLensTest do
     def call_another_field, do: another_field()
   end
 
+  defmodule WithPrefix do
+    use TypedStruct
+
+    typedstruct do
+      plugin TypedStructLens, prefix: :lens_
+
+      field :a_field, String.t()
+    end
+  end
+
+  defmodule WithPostfix do
+    use TypedStruct
+
+    typedstruct do
+      plugin TypedStructLens, postfix: :_lens
+
+      field :a_field, String.t()
+    end
+  end
+
   ############################################################################
   ##                             Standard cases                             ##
   ############################################################################
@@ -67,5 +87,13 @@ defmodule TypedStructLensTest do
 
   test "can still generate a public lens when lens: :private is the default" do
     assert PrivateByDefault.public_lens() == Lens.key(:public_lens)
+  end
+
+  test "the name of generated functions can be prefixed" do
+    assert WithPrefix.lens_a_field() == Lens.key(:a_field)
+  end
+
+  test "the name of generated functions can be postfixed" do
+    assert WithPostfix.a_field_lens() == Lens.key(:a_field)
   end
 end
