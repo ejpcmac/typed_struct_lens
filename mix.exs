@@ -7,7 +7,7 @@ defmodule TypedStructLens.MixProject do
   def project do
     [
       app: :typed_struct_lens,
-      version: @version <> dev(),
+      version: @version,
       elixir: "~> 1.6",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
@@ -53,8 +53,7 @@ defmodule TypedStructLens.MixProject do
       {:stream_data, "~> 0.4.0", only: :test},
 
       # Project dependencies
-      {:typed_struct,
-       github: "ejpcmac/typed_struct", branch: "release/0.2.0", runtime: false},
+      {:typed_struct, "~> 0.2.0"},
       {:lens, "~> 0.9.0"},
 
       # Documentation dependencies
@@ -68,7 +67,7 @@ defmodule TypedStructLens.MixProject do
       # Use a custom PLT directory for continuous integration caching.
       plt_core_path: System.get_env("PLT_DIR"),
       plt_file: plt_file(),
-      plt_add_deps: :transitive,
+      plt_add_deps: :app_tree,
       flags: [
         :unmatched_returns,
         :error_handling,

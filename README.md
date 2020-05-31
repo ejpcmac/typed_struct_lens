@@ -9,7 +9,7 @@ without writing boilerplate code.
 
 ## Rationale
 
-If you define your structs with TypedStruct and used Lens alongside, you may end
+If you define your structs with TypedStruct and use Lens alongside, you may end
 up defining lenses for your fields:
 
 ```elixir
@@ -33,7 +33,7 @@ end
 ```
 
 But if you are using TypedStruct, it is also highly probable that you do not
-like to write bolerplate code. TypedStructLens is here to write the `deflens`
+like to write boilerplate code. TypedStructLens is here to write the `deflens`
 for you:
 
 ```elixir
@@ -58,7 +58,7 @@ end
 To use this plugin in your project, add this to your Mix dependencies:
 
 ```elixir
-{:typed_struct_lens, "~> #{Mix.Project.config()[:version]}"}
+{:typed_struct_lens, "~> 0.1.0"}
 ```
 
 If you do not plan to compile modules using this TypedStruct plugin at
@@ -159,6 +159,6 @@ Before contributing to this project, please read the
 
 ## License
 
-Copyright © 2019 Jean-Philippe Cugnet
+Copyright © 2020 Jean-Philippe Cugnet
 
 This project is licensed under the [MIT license](LICENSE).
