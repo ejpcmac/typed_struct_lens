@@ -54,7 +54,7 @@ defmodule TypedStructLens.MixProject do
 
       # Project dependencies
       {:typed_struct,
-       github: "ejpcmac/typed_struct", branch: :develop, runtime: false},
+       github: "ejpcmac/typed_struct", branch: "release/0.2.0", runtime: false},
       {:lens, "~> 0.9.0"},
 
       # Documentation dependencies
