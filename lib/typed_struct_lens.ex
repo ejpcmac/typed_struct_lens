@@ -6,7 +6,7 @@ defmodule TypedStructLens do
 
   ## Rationale
 
-  If you define your structs with TypedStruct and used Lens alongside, you may
+  If you define your structs with TypedStruct and use Lens alongside, you may
   end up defining lenses for your fields:
 
       defmodule Person do
@@ -28,7 +28,7 @@ defmodule TypedStructLens do
       end
 
   But if you are using TypedStruct, it is also highly probable that you do not
-  like to write bolerplate code. TypedStructLens is here to write the `deflens`
+  like to write boilerplate code. TypedStructLens is here to write the `deflens`
   for you:
 
       defmodule Person do
