@@ -53,7 +53,7 @@ defmodule TypedStructLens.MixProject do
       {:stream_data, "~> 0.4.0", only: :test},
 
       # Project dependencies
-      {:typed_struct, github: "ejpcmac/typed_struct", branch: "release/0.2.0"},
+      {:typed_struct, "~> 0.2.0"},
       {:lens, "~> 0.9.0"},
 
       # Documentation dependencies
