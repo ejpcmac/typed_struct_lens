@@ -1,13 +1,13 @@
 defmodule TypedStructLens.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.1.1"
   @repo_url "https://github.com/ejpcmac/typed_struct_lens"
 
   def project do
     [
       app: :typed_struct_lens,
-      version: @version,
+      version: @version <> dev(),
       elixir: "~> 1.6",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
