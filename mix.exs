@@ -44,20 +44,20 @@ defmodule TypedStructLens.MixProject do
   defp deps do
     [
       # Development dependencies
-      {:ex_check, "~> 0.11.0", only: :dev, runtime: false},
+      {:ex_check, "~> 0.14.0", only: :dev, runtime: false},
       {:credo, "~> 1.0", only: :dev, runtime: false},
-      {:dialyxir, "~> 1.0-rc", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.0", only: :dev, runtime: false},
       {:excoveralls, ">= 0.0.0", only: :test, runtime: false},
       {:mix_test_watch, ">= 0.0.0", only: :test, runtime: false},
       {:ex_unit_notifier, ">= 0.0.0", only: :test, runtime: false},
-      {:stream_data, "~> 0.4.0", only: :test},
+      {:stream_data, "~> 0.5.0", only: :test},
 
       # Project dependencies
       {:typed_struct, "~> 0.2.0"},
       {:lens, "~> 0.9.0"},
 
       # Documentation dependencies
-      {:ex_doc, "~> 0.19", only: :docs, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: :docs, runtime: false}
     ]
   end
 
