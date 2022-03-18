@@ -53,7 +53,7 @@ defmodule TypedStructLens.MixProject do
       {:stream_data, "~> 0.5.0", only: :test},
 
       # Project dependencies
-      {:typed_struct, "~> 0.2.0"},
+      {:typed_struct, "~> 0.3.0"},
       {:lens, "~> 1.0"},
 
       # Documentation dependencies

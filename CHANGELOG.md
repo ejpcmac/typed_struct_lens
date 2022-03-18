@@ -8,6 +8,11 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+* Update `typed_struct` to 0.3.0.
+* Update `lens` to 1.0.0.
+
 ## [0.1.0] - 2020-05-31
 
 ### Added

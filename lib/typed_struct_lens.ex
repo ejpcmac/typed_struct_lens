@@ -139,8 +139,8 @@ defmodule TypedStructLens do
   use TypedStruct.Plugin
 
   @impl true
-  @spec field(atom(), any(), keyword()) :: Macro.t()
-  def field(name, _type, opts) do
+  @spec field(atom(), any(), keyword(), Macro.Env.t()) :: Macro.t()
+  def field(name, _type, opts, _env) do
     prefix = opts[:prefix]
     postfix = opts[:postfix]
     function_name = :"#{prefix}#{name}#{postfix}"
