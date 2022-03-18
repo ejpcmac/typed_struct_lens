@@ -19,10 +19,17 @@ defmodule TypedStructLens.MixProject do
       preferred_cli_env: cli_env(),
 
       # Docs
+      name: "TypedStructLens",
       docs: [
-        main: "TypedStructLens",
+        main: "readme",
         source_url: @repo_url,
-        source_ref: "v#{@version}"
+        source_ref: "v#{@version}",
+        extras: [
+          "README.md": [title: "Overview"],
+          "CHANGELOG.md": [title: "Changelog"],
+          "CONTRIBUTING.md": [title: "Contributing"],
+          LICENSE: [title: "License"]
+        ]
       ],
 
       # Package
@@ -102,7 +109,10 @@ defmodule TypedStructLens.MixProject do
   defp package do
     [
       licenses: ["MIT"],
-      links: %{"GitHub" => @repo_url}
+      links: %{
+        "Changelog" => "https://hexdocs.pm/typed_struct_lens/changelog.html",
+        "GitHub" => @repo_url
+      }
     ]
   end
 

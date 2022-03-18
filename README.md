@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.com/ejpcmac/typed_struct_lens.svg?branch=develop)](https://travis-ci.com/ejpcmac/typed_struct_lens)
 [![hex.pm version](http://img.shields.io/hexpm/v/typed_struct_lens.svg?style=flat)](https://hex.pm/packages/typed_struct_lens)
 
+<!-- @moduledoc -->
+
 TypedStructLens is a [TypedStruct](https://github.com/ejpcmac/typed_struct)
 plugin for defining a [Lens](https://github.com/obrok/lens) on each field
 without writing boilerplate code.
@@ -151,6 +153,8 @@ defmodule MyStruct do
   end
 end
 ```
+
+<!-- @moduledoc -->
 
 ## [Contributing](CONTRIBUTING.md)
 
