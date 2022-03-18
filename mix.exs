@@ -54,7 +54,7 @@ defmodule TypedStructLens.MixProject do
 
       # Project dependencies
       {:typed_struct, "~> 0.2.0"},
-      {:lens, "~> 0.9.0"},
+      {:lens, "~> 1.0"},
 
       # Documentation dependencies
       {:ex_doc, ">= 0.0.0", only: :docs, runtime: false}
