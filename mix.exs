@@ -1,7 +1,7 @@
 defmodule TypedStructLens.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.1.1"
   @repo_url "https://github.com/ejpcmac/typed_struct_lens"
 
   def project do
@@ -19,10 +19,17 @@ defmodule TypedStructLens.MixProject do
       preferred_cli_env: cli_env(),
 
       # Docs
+      name: "TypedStructLens",
       docs: [
-        main: "TypedStructLens",
+        main: "readme",
         source_url: @repo_url,
-        source_ref: "v#{@version}"
+        source_ref: "v#{@version}",
+        extras: [
+          "README.md": [title: "Overview"],
+          "CHANGELOG.md": [title: "Changelog"],
+          "CONTRIBUTING.md": [title: "Contributing"],
+          LICENSE: [title: "License"]
+        ]
       ],
 
       # Package
@@ -44,20 +51,20 @@ defmodule TypedStructLens.MixProject do
   defp deps do
     [
       # Development dependencies
-      {:ex_check, "~> 0.11.0", only: :dev, runtime: false},
+      {:ex_check, "~> 0.14.0", only: :dev, runtime: false},
       {:credo, "~> 1.0", only: :dev, runtime: false},
-      {:dialyxir, "~> 1.0-rc", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.0", only: :dev, runtime: false},
       {:excoveralls, ">= 0.0.0", only: :test, runtime: false},
       {:mix_test_watch, ">= 0.0.0", only: :test, runtime: false},
       {:ex_unit_notifier, ">= 0.0.0", only: :test, runtime: false},
-      {:stream_data, "~> 0.4.0", only: :test},
+      {:stream_data, "~> 0.5.0", only: :test},
 
       # Project dependencies
-      {:typed_struct, "~> 0.2.0"},
-      {:lens, "~> 0.9.0"},
+      {:typed_struct, "~> 0.3.0"},
+      {:lens, "~> 1.0"},
 
       # Documentation dependencies
-      {:ex_doc, "~> 0.19", only: :docs, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: :docs, runtime: false}
     ]
   end
 
@@ -102,7 +109,10 @@ defmodule TypedStructLens.MixProject do
   defp package do
     [
       licenses: ["MIT"],
-      links: %{"GitHub" => @repo_url}
+      links: %{
+        "Changelog" => "https://hexdocs.pm/typed_struct_lens/changelog.html",
+        "GitHub" => @repo_url
+      }
     ]
   end
 
@@ -112,8 +122,10 @@ defmodule TypedStructLens.MixProject do
     with {rev, 0} <-
            System.cmd("git", ["rev-parse", "--short", "HEAD"],
              stderr_to_stdout: true
-           ) do
-      "-dev+" <> String.trim(rev)
+           ),
+         {status, 0} <- System.cmd("git", ["status", "--porcelain"]) do
+      status = if status == "", do: "", else: "-dirty"
+      "-dev+" <> String.trim(rev) <> status
     else
       _ -> "-dev"
     end
