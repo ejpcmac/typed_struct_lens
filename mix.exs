@@ -7,7 +7,7 @@ defmodule TypedStructLens.MixProject do
   def project do
     [
       app: :typed_struct_lens,
-      version: @version <> dev(),
+      version: @version,
       elixir: "~> 1.6",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
