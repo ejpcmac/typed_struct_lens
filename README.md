@@ -163,6 +163,6 @@ Before contributing to this project, please read the
 
 ## License
 
-Copyright © 2020 Jean-Philippe Cugnet
+Copyright © 2020, 2022 Jean-Philippe Cugnet
 
 This project is licensed under the [MIT license](LICENSE).
