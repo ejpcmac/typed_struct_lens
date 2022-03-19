@@ -60,7 +60,7 @@ end
 To use this plugin in your project, add this to your Mix dependencies:
 
 ```elixir
-{:typed_struct_lens, "~> 0.1.0"}
+{:typed_struct_lens, "~> 0.1.1"}
 ```
 
 If you do not plan to compile modules using this TypedStruct plugin at
